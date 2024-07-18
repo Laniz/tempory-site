@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Artist Or Song</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="header">
+        <h2>Update Artist and Song</h2>
+    </div>
+
+    <div id="p_playlists">
+        <h2>Search for Song</h2>
+
+        <label for="songName">Song Name:</label>
+        <input type="text" placeholder="Song_table.song_name" id="songName" name="songName"><br><br>
+
+        <label for="artistName">Artist Name:</label>
+        <input type="text" placeholder="Artist_table.artist_name" id="artistFirstName" name="artistFirstName"><br><br>
+
+        <label for="albumName">Album Name:</label>
+        <input type="text" placeholder="Album_table.album_name" id="albumName" name="albumName"><br><br>
+
+        <div id="searchResults">
+            </div>
+
+        <h2>Update Information</h2>
+
+        <div id="updateForm">
+            <label for="updateSongName">Song Name:</label>
+            <input type="text" placeholder="Song_table.song_name" id="updateSongName" name="updateSongName" disabled><br><br>
+
+            <label for="updateArtistName">Artist Name:</label>
+            <input type="text" placeholder="Artist_table.artist_name" id="updateArtistFirstName" name="updateArtistFirstName" disabled><br><br>
+
+            <label for="updateAlbumName">Album Name:</label>
+            <input type="text" placeholder="Album_table.album_name" id="updateAlbumName" name="updateAlbumName" disabled><br><br>
+
+            <label for="updateSongLength">Song Length (minutes:seconds):</label>
+            <input type="time" placeholder="Song_table.song_length" id="updateSongLength" name="updateSongLength" step="1" disabled><br><br>
+
+            <label for="updateSongGenre">Song Genre:</label>
+            <input type="text" placeholder="Genre_table.genre_name" id="updateSongGenre" name="updateSongGenre" disabled><br><br>
+
+            <label for="updateSongTag">Song Tag:</label>
+            <input type="text" placeholder="Song_Tags_table.tag_name" id="updateSongTag" name="updateSongTag" disabled><br><br>
+
+            <label for="updateReview">Rating Review:</label>
+            <input type="text" placeholder="Rating_Review_table.review" id="updateReview" name="updateReview" disabled><br><br>
+
+            <label for="updateRating">Rating Review:</label>
+            <input type="text" placeholder="Rating_Review_table.Rating" id="updateRating" name="updateRating" disabled><br><br>
+        </div>
+
+        <div id="back">
+            <button type="button" id="saveButton" disabled>Save Changes</button>
+        </div>
+    </div>
+
+    <script>
+        // Future JavaScript to handle:
+        // 1. Searching for songs 
+        // 2. Displaying search results
+        // 3. Populating update form with selected song data
+        // 4. Enabling form fields and save button when a song is selected
+        // 5. Saving updated song information
+    </script>
+</body>
+</html>
