@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add User Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="header">
+        <h2>Add User Form</h2>
+    </div>
+
+    <div id="p_playlists">
+        <h2>User Information</h2>
+        <form id="addUserForm"> 
+            <label for="userName">User Name:</label>
+            <input type="text" id="userName" name="userName" placeholder="user_table.user_name" required><br><br>
+
+            <label for="userEmail">User Email:</label>
+            <input type="email" id="userEmail" name="userEmail" placeholder="user_table.email" required><br><br>
+
+            <label for="userPhone">User Phone Number:</label>
+            <input type="tel" id="userPhone" name="userPhone" placeholder="user_table.phone_number" required><br><br>
+
+            <label for="userFirstName">User First Name:</label>
+            <input type="text" id="userFirstName" name="userFirstName" placeholder="user_table.first_name" required><br><br>
+
+            <label for="userMiddleName">User Middle Name:</label>
+            <input type="text" id="userMiddleName" name="userMiddleName" placeholder="user_table.middle_name"><br><br>
+
+            <label for="userLastName">User Last Name:</label>
+            <input type="text" id="userLastName" name="userLastName" placeholder="user_table.last_name" required><br><br>
+
+            <div id="back">
+                <button type="submit">Add User</button> 
+            </div>
+        </form>
+
+        
+
+        <div id="back">
+            <form action="main_window.html" method="get">
+             <button type="back">back</button></form>  
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to handle form submission and user addition
+        document.getElementById('addUserForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Get form values
+            const userName = document.getElementById('userName').value;
+            const userEmail = document.getElementById('userEmail').value;
+            // ... (get values for other fields) ...
+
+            // Validate form data (ensure fields are filled, etc.)
+
+            // Send data to backend for insertion into the database
+            // ... (You'll need to implement this part using your backend technology) ...
+        });
+    </script>
+</body>
+</html>
