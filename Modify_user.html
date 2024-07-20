@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Edit User Information</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Edit User Information</h1>
+
+  <form id="editUserForm">
+    <label for="userName">User Name:</label>
+    <input type="text" id="userName" name="userName" required><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required><br>
+
+    <label for="phoneNumber">Phone Number:</label>
+    <input type="tel" id="phoneNumber" name="phoneNumber" required><br>
+
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName" name="firstName" required><br>
+
+    <label for="middleName">Middle Name:</label>
+    <input type="text" id="middleName" name="middleName"><br>
+
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" name="lastName" required><br>
+
+    <button type="submit">Save Changes</button>
+  </form>
+
+  <div id="back">
+    <form action="main_window.html" method="get">
+     <button type="back">back</button></form>  
+</div>
+
+  <script>
+    document.getElementById("editUserForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+   
+      
+      // Add the user ID to the form data
+      formData.append('userId', userId); 
+
+      
+      
+    });
+  </script>
+</body>
+</html>

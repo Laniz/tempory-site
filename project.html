@@ -1,46 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>login page</title>
-    <link rel="stylesheet" href="style.css">
+  <title>Login Page</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-    <div id="user_name">
-        <h2>user name</h2>
-        <input type="text" placeholder="user table.user_name">
+
+    <body id ="m_body">
+        <div id="header">
+            <h1>Stratus Sounds</h1>
         </div>
 
+  <div id="user_name">
+    <h2>User Name</h2>
+    <input type="text" placeholder="user table.user_name (You can login without user_name)" >
+  </div>
+  
+  <div id="login">
+    <form action="main_window.html" method="get">
+      <button type="submit">Login</button>
+    </form>
+  </div>
 
+  <p></p>
 
-    <div id="password">
-        <h2>password</h2>
-        <input type="text" placeholder="user table.password">
-        </div>
+  <div id="Add_User_page">
+    <form action="Add_user.html" method="get">
+      <button type="submit">Add User</button>
+    </form>
+  </div>
 
-    <div id="login">
-        <form action="main_window.html" method="get">
-            <button type="login">Login</button>
-        </form>
-        </div>
-    <div>
-        <p></p>
-    </div>
+  <p></p>
 
-        <div id="Add_User_page">
-            <!-- <h2>Search_history</h2> -->
-            <form action="Add_user.html" method="get">
-             <button type="Add_user">Add User</button></form>
-            </div>
-            
-
-            <p></p>
-            <div id="Add_User_page">
-                <!-- <h2>Search_history</h2> -->
-                <form action="Delete_user.html" method="get">
-                 <button type="Delete_user">Delete User</button></form>
-                </div>
-
+  <div id="Add_User_page">
+    <form action="Delete_user.html" method="get">
+      <button type="submit">Delete User</button>
+    </form>
+  </div>
 
 </body>
 </html>
