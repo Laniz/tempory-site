@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add to/Delete from Playlist</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Add to/Delete from Playlist</h1>
+
+  <form id="playlistForm" onsubmit="return validateForm()">
+    <label for="songName">Song Name:</label>
+    <input type="text" id="songName" name="songName" required><br> 
+
+    <label for="albumName">Album Name:</label>
+    <input type="text" id="albumName" name="albumName" required><br>
+
+    <label for="artistName">Artist Name:</label>
+    <input type="text" id="artistName" name="artistName" required><br>
+
+    <label for="playlistName">Playlist Name:</label>
+    <input type="text" id="playlistName" name="playlistName" required><br>
+
+    <div>
+      <button type="submit" name="action" value="add">Add to Playlist</button>
+      <button type="submit" name="action" value="delete">Delete from Playlist</button>
+    </div>
+  </form>
+
+  <div id="back">
+    <form action="main_window.html" method="get">
+        <button type="submit">Back</button>
+    </form>
+
+  <script>
+    function validateForm() {
+      // Basic validation (ensure fields are filled)
+      const inputs = document.querySelectorAll("#playlistForm input");
+      for (const input of inputs) {
+        if (!input.value) {
+          alert("Please fill in all fields.");
+          return false;
+        }
+      }
+      return true;
+    }
+
+    // Handle form submission (send data to server-side script)
+    document.getElementById("playlistForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      const formData = new FormData(this);
+      // ... (send formData to your server-side script using AJAX)
+    });
+  </script>
+</body>
+</html>

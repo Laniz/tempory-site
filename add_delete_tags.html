@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Modify Tags & Review</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Modify Tags & Review</h1>
+
+  <form id="modifyForm" onsubmit="return validateForm()">
+    <label for="songName">Song Name:</label>
+    <input type="text" id="songName" name="songName" required><br> 
+
+    <label for="albumName">Album Name:</label>
+    <input type="text" id="albumName" name="albumName" required><br>
+
+    <label for="artistName">Artist Name:</label>
+    <input type="text" id="artistName" name="artistName" required><br>
+    
+    <label for="tags">Tags (comma-separated):</label>
+    <input type="text" id="tags" name="tags"><br>
+
+    <label for="rating">Rating:</label>
+    <select id="rating" name="rating">
+      <option value="1">1 Star</option>
+      <option value="2">2 Stars</option>
+      <option value="3">3 Stars</option>
+      <option value="4">4 Stars</option>
+      <option value="5">5 Stars</option>
+    </select><br>
+    
+    <label for="review">Review:</label>
+    <textarea id="review" name="review" rows="4"></textarea><br>
+
+    <button type="submit">Save Changes</button>
+  </form>
+
+  <div id="back">
+    <form action="main_window.html" method="get">
+     <button type="back">back</button></form>  
+</div>
+
+  <script>
+    function validateForm() {
+      // Basic validation (ensure fields are filled)
+      const inputs = document.querySelectorAll("#modifyForm input:not([type='checkbox']), #modifyForm textarea, #modifyForm select");
+      for (const input of inputs) {
+        if (!input.value) {
+          alert("Please fill in all fields.");
+          return false;
+        }
+      }
+      return true;
+    }
+
+    // Handle form submission
+    document.getElementById("modifyForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      const formData = new FormData(this);
+
+      // Process tags input
+      const tagsInput = formData.get("tags");
+      const tagsArray = tagsInput.split(",").map(tag => tag.trim());
+      formData.set("tags", JSON.stringify(tagsArray)); // Send tags as an array
+
+      // Send formData to your server-side script (using AJAX or similar)
+      // ...
+    });
+  </script>
+</body>
+</html>

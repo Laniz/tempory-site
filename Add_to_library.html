@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add to Library / Delete From library</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Add to Library / Delete From library</h1>
+
+  <form id="addToLibraryForm" onsubmit="return validateForm()">
+
+    <h2>Artist</h2>
+    <label for="artistName">Artist Name:</label>
+    <input type="text" id="artistName" name="artistName" required><br>
+    <label for="artistDOB">Artist Date of Birth:</label>
+    <input type="date" id="artistDOB" name="artistDOB" required><br>
+    <label for="artistBio">Artist Bio:</label>
+    <textarea id="artistBio" name="artistBio" rows="4"></textarea><br>
+
+    <h2>Album</h2>
+    <label for="albumName">Album Name:</label>
+    <input type="text" id="albumName" name="albumName" required><br>
+    <label for="albumReleaseDate">Album Release Date:</label>
+    <input type="date" id="albumReleaseDate" name="albumReleaseDate" required><br>
+
+    <h2>Song</h2>
+    <label for="songName">Song Name:</label>
+    <input type="text" id="songName" name="songName" required><br>
+    <label for="songLength">Song Length:</label>
+    <input type="time" id="songLength" name="songLength" required><br>
+    <label for="songGenre">Song Genre:</label>
+    <input type="text" id="songGenre" name="songGenre" required><br>
+
+    <h2>Other Details</h2>
+    <label for="rating">Rating:</label>
+    <select id="rating" name="rating">
+      <option value="1">1 Star</option>
+      <option value="2">2 Stars</option>
+      <option value="3">3 Stars</option>
+      <option value="4">4 Stars</option>
+      <option value="5">5 Stars</option>
+    </select><br>
+    <label for="review">Review:</label>
+    <textarea id="review" name="review" rows="4"></textarea><br>
+    
+    <button type="submit">Add to Library</button>
+  </form>
+  <p id="message"></p>
+
+  <button type="submit">Remove from Library</button>
+  </form>
+
+  
+
+  <div id="back">
+    <form action="main_window.html" method="get">
+     <button type="back">back</button></form>  
+</div>
+</body>
+</html>

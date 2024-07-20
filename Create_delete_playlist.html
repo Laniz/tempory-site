@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Delete/Create Playlist</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Delete/Create Playlist</h1>
+
+  <form id="playlistForm" onsubmit="return validateForm()">
+    <label for="playlistName">Playlist Name:</label>
+    <input type="text" id="playlistName" name="playlistName" required><br> 
+
+    <label for="creationDate">Creation Date:</label>
+    <input type="date" id="creationDate" name="creationDate" required><br>
+
+    <div>
+      <button type="submit" name="action" value="delete">Delete Playlist</button>
+      <button type="submit" name="action" value="create">Create Playlist</button>
+    </div>
+  </form>
+
+  <div id="back">
+    <form action="main_window.html" method="get">
+     <button type="back">back</button></form>  
+</div>
+
+  <script>
+    function validateForm() {
+      if (!document.getElementById("playlistName").value ||
+          !document.getElementById("creationDate").value) {
+        alert("Please fill in all fields.");
+        return false;
+      }
+      return true;
+    }
+
+    document.getElementById("playlistForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      const formData = new FormData(this);
+      
+      // Get the action (delete or create)
+      const action = formData.get("action");
+      
+      // Send data to server-side script (replace with your actual logic)
+      fetch('/your_playlist_script.php', { // Replace with your script URL
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          alert(action === 'delete' ? "Playlist deleted successfully!" : "Playlist created successfully!");
+          // Optionally clear the form
+          this.reset();
+        } else {
+          alert("Error: " + data.message);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
